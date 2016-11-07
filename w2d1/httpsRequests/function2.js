@@ -5,7 +5,7 @@ function getAndPrintHTML () {
 
   var requestOptions = {
     host: 'sytantris.github.io',
-    path: '/http-examples/step1.html'
+    path: '/http-examples/step2.html'
   };
 
   let rawData = '';
@@ -23,10 +23,13 @@ function getAndPrintHTML () {
 
     response.on('end', () => {
       console.log("Stream is finished.");
+
+      console.log(rawData);
     });
 
   });
 }
 
 getAndPrintHTML ();
+
 
