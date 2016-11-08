@@ -2,6 +2,8 @@ const https = require('https');
 
 module.exports = function getHTML (options, callback) {
 
+function getHTML (options, callback) {
+
   var otherObject = {};
   otherObject.host = options.host;
   otherObject.path = options.path;
@@ -31,3 +33,4 @@ module.exports = function getHTML (options, callback) {
 
   });
 };
+}
