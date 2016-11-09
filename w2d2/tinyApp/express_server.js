@@ -21,6 +21,20 @@ app.get("/urls.json", (req, res) => {
   res.json(urlDatabase);
 });
 
+app.post("/urls", (req, res) => {
+  let shortURL = generateRandomString();
+  let fullURL = req.body.fullURL;
+  urlDatabase[shortURL] = fullURL;
+  res.redirect(`/urls/${shortURL}`);
+});
+// Grab the short url and add it to the urlDatabase
+
+// app.get("/u/:shortURL", (req, res) => {
+//   let fullURL = urlDatabase[shortURL];
+//   res.redirect(`/urls/${fullURL}`);
+// });
+
+
 app.get("/hello", (req, res) => {
   res.end("<html><body>Hello <b>World</b></body></html>\n");
 });
@@ -59,10 +73,6 @@ function generateRandomString() {
   for (var i = 0; i < 6; i++) { //loops until it hits the set max length
     urlShortened += list.charAt(Math.floor(Math.random() * list.length)); //randomly outputs a character from the list and stores in urlShortened
   }
-
-console.log("New and Shortened URL: " + urlShortened);
-
+  return urlShortened;
 }
-
-generateRandomString();
 
