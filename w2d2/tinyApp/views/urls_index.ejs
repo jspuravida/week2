@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TinyApp</title>
+</head>
+
+  <header>
+        <% include ../views/partials/_header %>
+  </header>
+
+<body>
+
+<!-- <pre><%= JSON.stringify(urls, null, 2) %></pre>
+ -->
+<!-- <pre><%= Object.keys(urls) %></pre>
+ -->
+
+<ul>
+  <% Object.keys(urls).forEach(function(key) { %>
+    <li><a href="<%= urls[key] %>"><%= key %></a></li>
+  <% }); %>
+</ul>
+
+
+
+<a href="">Shorten your URL here!</a>
+
+</body>
+
+</html>
+
